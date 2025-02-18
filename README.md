@@ -214,11 +214,6 @@ El uso de IA debe ser un complemento para mejorar la eficiencia del desarrollo, 
 
 ---
 
-## ⏱ Tiempo de Ejecución
-
-Se espera que la prueba se complete en un máximo de **3 horas**. Valórate una solución funcional, bien documentada y estructurada dentro de este tiempo.
-
----
 
 ## 📦 Instrucciones de Entrega
 
