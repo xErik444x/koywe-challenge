@@ -218,7 +218,7 @@ El uso de IA debe ser un complemento para mejorar la eficiencia del desarrollo, 
 ## 📦 Instrucciones de Entrega
 
 - **Repositorio:**  
-  - El código debe subirse a un repositorio **privado** en GitHub o GitLab
+  - El código debe subirse a un repositorio **público** en GitHub.
   - Se te proporcionará un correo electrónico al cual deberás dar acceso como colaborador del repositorio para la revisión del código
   - Alternativamente, puedes enviar un archivo ZIP que incluya la carpeta `.git` para mantener el historial de commits
   
