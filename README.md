@@ -214,13 +214,13 @@ El uso de IA debe ser un complemento para mejorar la eficiencia del desarrollo, 
 
 ---
 
-
 ## 📦 Instrucciones de Entrega
 
-- **Repositorio:**  
+- **Repositorio:**
+  - Antes de comenzar, haz un fork de este repositorio para que tu solución se base en esta plantilla.
   - El código debe subirse a un repositorio **público** en GitHub.
-  - Se te proporcionará un correo electrónico al cual deberás dar acceso como colaborador del repositorio para la revisión del código
-  - Alternativamente, puedes enviar un archivo ZIP que incluya la carpeta `.git` para mantener el historial de commits
+  - Se te proporcionará un correo electrónico al cual deberás dar acceso como colaborador del repositorio para la revisión del código.
+  - Alternativamente, puedes enviar un archivo ZIP que incluya la carpeta `.git` para mantener el historial de commits.
   
   > **Nota:** Si eliges la opción del ZIP, asegúrate de que el archivo incluya todo el historial de Git para poder evaluar la evolución del desarrollo.
 
