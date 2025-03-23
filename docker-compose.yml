@@ -1,0 +1,31 @@
+services:
+  database:
+    image: postgres:17
+    container_name: koywe_postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: koywe123
+      POSTGRES_DB: koywe_db
+      POSTGRES_USER: koywe
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: koywe_api
+    ports:
+      - '3000:3000'
+    depends_on:
+      - database
+    environment:
+      - DATABASE_URL=postgresql://koywe:koywe123@bd:5432/koywe_db
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+
+volumes:
+  postgres_data:
