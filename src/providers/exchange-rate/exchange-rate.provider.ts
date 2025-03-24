@@ -29,8 +29,6 @@ export class ExchangeRateProvider {
 
       return Number(data[from].price);
     } catch (error) {
-      console.log(error);
-      
       if (error instanceof AxiosError) {
         throw new HttpException(
           `Exchange rate service error: ${error.message}`,
