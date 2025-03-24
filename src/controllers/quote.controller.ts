@@ -1,4 +1,4 @@
-import { Controller, Post, Body, UsePipes, ValidationPipe } from '@nestjs/common';
+import { Controller, Post, Body, UsePipes, ValidationPipe, Get, Param } from '@nestjs/common';
 import { QuoteFacade } from '../facades/quote.facade';
 import { CreateQuoteDto } from 'src/dto/quote.dto';
 
@@ -11,4 +11,9 @@ export class QuoteController {
   async createQuote(@Body() quoteRequest: CreateQuoteDto) {
     return await this.quoteFacade.createQuote(quoteRequest);
   }
+
+  @Get("/:id")
+  async getQuoteById(@Param('id') id: string) {
+    return await this.quoteFacade.getQuoteById(id);
+  } 
 }
