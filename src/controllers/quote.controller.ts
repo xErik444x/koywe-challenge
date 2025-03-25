@@ -1,10 +1,13 @@
-import { Controller, Post, Body, UsePipes, ValidationPipe, Get, Param } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, UseGuards, UsePipes, ValidationPipe } from '@nestjs/common';
+import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 import { QuoteFacade } from '../facades/quote.facade';
 import { CreateQuoteDto, QuoteResponseDto } from '../dto/quote.dto';
-import { ApiTags, ApiOperation, ApiResponse, ApiParam } from '@nestjs/swagger';
+import { ApiTags, ApiOperation, ApiResponse, ApiParam, ApiBearerAuth } from '@nestjs/swagger';
 
 @ApiTags('Quotes')
 @Controller('quote')
+@UseGuards(JwtAuthGuard)
+@ApiBearerAuth()
 export class QuoteController {
   constructor(private readonly quoteFacade: QuoteFacade) {}
 

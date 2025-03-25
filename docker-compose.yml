@@ -22,7 +22,7 @@ services:
     depends_on:
       - database
     environment:
-      - DATABASE_URL=postgresql://koywe:koywe123@bd:5432/koywe_db
+      - DATABASE_URL=postgresql://koywe:koywe123@database:5432/koywe_db
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules

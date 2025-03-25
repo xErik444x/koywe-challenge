@@ -12,50 +12,85 @@ The project follows a clean, layered architecture:
 - **Models**: Data structure definitions.
 - **Providers**: External service integrations (e.g., exchange rate providers).
 
+# API Routes
+
+> can be accessed at accessed at localhost:3000/api (Swagger)
+
+| Method | Route          | Description         | Request Body       | Auth Required |
+| ------ | -------------- | ------------------- | ------------------ | ------------- |
+| POST   | /auth/register | Register a new user | AuthCredentialsDto | No            |
+| POST   | /auth/login    | Login user          | AuthCredentialsDto | No            |
+| POST   | /quote         | Create a new quote  | CreateQuoteDto     | Yes           |
+| GET    | /quote/:id     | Get a quote by ID   | -                  | Yes           |
+
+**AuthCredentialsDto**
+
+```typescript
+{
+  email: string;
+  password: string;
+}
+```
+
+**CreateQuoteDto**
+
+```typescript
+{
+  from: string;
+  to: string;
+  amount: number;
+}
+```
+
 ## 🚀 Getting Started
 
 ### Prerequisites
 
 - Node.js (v18 or higher)
-- pnpm
 - Docker and Docker Compose
-- PostgreSQL (if running locally)
+- PostgreSQL (if running locally without Docker)
 
 ### Environment Setup
 
-1. Clone the repository:
-
-```bash
-git clone <repository-url>
-cd <repository-folder>
-```
-
-2. Copy the environment example file:
-
-```bash
-cp .env.example .env
-```
-
-3. Configure your environment variables in `.env`.
+1. Copy the environment example file.
+2. Configure your environment variables in `.env`.
 
 ### Installation
 
 1. Install dependencies:
 
 ```bash
-pnpm install
+npm install --legacy-peer-deps
 ```
 
-2. Initialize Prisma:
+2. Generate Prisma client:
 
 ```bash
-pnpm prisma init
+npx prisma generate (reload ide to see prisma client if not loaded)
 ```
 
-3. Generate Prisma client:
+3. Run the database (OPTIONAL):
 
 ```bash
-pnpm prisma generate
+docker-compose up -d database
+```
+
+4. Generate prisma database:
+
+```bash
+npx prisma db push
+```
+
+## 🛠️ Development
+
+### Running the Application
+
+```bash
+# Development mode
+pnpm run start:dev
+
+# Production mode
+pnpm run start:prod
 ```
 
 ## 🐳 Docker Setup
@@ -70,18 +105,6 @@ docker-compose up -d database
 
 ```bash
 docker-compose up -d
-```
-
-## 🛠️ Development
-
-### Running the Application
-
-```bash
-# Development mode
-pnpm run start:dev
-
-# Production mode
-pnpm run start:prod
 ```
 
 ## 🧪 Testing
@@ -104,10 +127,6 @@ The API documentation is available through Swagger UI at:
 ```
 http://localhost:3000/api
 ```
-
-## 🔧 Database
-
-This project uses PostgreSQL with Prisma as the ORM. The database schema is defined in `prisma/schema.prisma`.
 
 ## 📖 Additional Resources
 
