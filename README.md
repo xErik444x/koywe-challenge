@@ -133,3 +133,11 @@ http://localhost:3000/api
 - [DDD & Dependency Injection with NestJS](https://dev.to/trickaugusto/ddd-dependency-injection-e-facade-com-nestjs-525c)
 - [SOLID Principles in NestJS](https://mugan86.medium.com/nestjs-aplicando-solid-357b80d4245c)
 - [Prisma Documentation](https://docs.nestjs.com/recipes/prisma)
+
+## 🧠 AI Utilization  
+
+This project leverages artificial intelligence tools to enhance development efficiency and code quality:  
+
+- **Trae** – Assisted code editor with generation and debugging.  
+- **GPT (ChatGPT, OpenAI)** – Explanation of complex architectural patterns, including facades.  
+- **Claude (Anthropic)** – Support for Prisma schema design.  
