@@ -101,7 +101,7 @@ pnpm run start:prod
 docker-compose up -d database
 ```
 
-### Running the Full Stack
+### Running the Backend & Database
 
 ```bash
 docker-compose up -d
